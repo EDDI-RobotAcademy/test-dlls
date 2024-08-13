@@ -1,0 +1,4 @@
+[submodule "template"]
+	path = template
+	url = https://github.com/EDDI-RobotAcademy/eddi_socket_control_with_fastapi.git
+	branch = main
