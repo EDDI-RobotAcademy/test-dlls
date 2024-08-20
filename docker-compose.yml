@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  app:
+    image: ghcr.io/${GITHUB_ACTOR}/dlls-fastapi:latest
+    container_name: DLLS-FastAPI
+    ports:
+      - 33333:33333
+      - 37373:37373
+    environments:
+	    - HOST=${HOST}
+	    - PORT=${PORT}
+	    - FASTAPI_PORT=${FASTAPI_PORT}
+	    - SERVER_CERTIFICATE=${SERVER_CERTIFICATE}
+	    - SERVER_PRIVATE=${SERVER_PRIVATE}
+	    - CLIENT_CA_CERTIFICATE=${CLIENT_CA_CERTIFICATE}
+	    - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge
